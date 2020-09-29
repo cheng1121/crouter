@@ -13,9 +13,7 @@ dependencies:
 #生成应用程序，在命令行中输入crouter运行命令行应用
 executables:
   crouter:
-dev_dependencies:
-  pedantic: ^1.9.0
-  test: ^1.14.4
+
 
 #配合executables时会把应用程序安装到本地
 #pub global activate --source path ./
