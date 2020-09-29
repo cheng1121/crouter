@@ -11,7 +11,10 @@
 
 2. 使用github库
 ```
-
+ crouter:
+    git:
+      url: https://github.com/chengbook/crouter.git
+      ref: v0.0.1
 ```
 
 ##### 添加注解
