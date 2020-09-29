@@ -12,7 +12,7 @@ dependencies:
   process_run: ^0.11.0+2
 #生成应用程序，在命令行中输入crouter运行命令行应用
 executables:
-  crouter:
+  crouter: crouter
 
 
 #配合executables时会把应用程序安装到本地
