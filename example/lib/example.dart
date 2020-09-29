@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:crouter/crouter_kit.dart';
+import 'package:crouter/crouter.dart';
 
 @CRouter('example/test1')
 class Test1 extends StatelessWidget {
