@@ -14,7 +14,7 @@
  crouter:
     git:
       url: https://github.com/chengbook/crouter.git
-      ref: v0.0.1
+      ref: v0.0.6
 ```
 
 ##### 添加注解
@@ -29,9 +29,11 @@ class Test1 extends StatelessWidget {
 ```
 
 ##### 激活crouter命令行工具
+
 ```
-pub global activate crouter
+pub global activate --source path <crouter path>
 ```
+执行完pub get 后，github上的项目存放在 flutter sdk -> .pub-cache ->git -> crouter
 
 ##### 执行命令
 在项目根目录下执行命令
