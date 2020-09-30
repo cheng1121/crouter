@@ -42,8 +42,12 @@ String moduleClass(String moduleName, String pages) {
       final name = str.replaceFirst(first, first.toUpperCase());
       sb.write(name);
     }
+  } else {
+    final first = moduleName.substring(0, 1);
+    final name = moduleName.replaceFirst(first, first.toUpperCase());
+    sb.write(name);
   }
-
+  print('generate file =========${sb.toString()}');
   return '''
   class ${sb.toString()}{
   ${sb.toString()}._();
