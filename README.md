@@ -29,10 +29,16 @@ class Test1 extends StatelessWidget {
 ```
 
 ##### 激活crouter命令行工具
+由于上传pub.dev时，google账号登陆授权无法通过，目前只能使用此命令
 
 ```
 pub global activate --source path <crouter path>
+
+///上传到pub.dev后，使用此命令
+pub global activate crouter
+
 ```
+
 执行完pub get 后，github上的项目存放在 flutter sdk -> .pub-cache ->git -> crouter
 
 ##### 执行命令
@@ -42,3 +48,5 @@ crouter
 ```
 1. 在项目的lib/src生成路由列表
 2. 在项目根目录下生成packages，名字为app_router，作用是存放所有页面的路由名称
+3. 每个module中的所有页面存放在一个和module名称对应的类中,如果module包含'_',则类名如下：
+    app_router -> AppRouter

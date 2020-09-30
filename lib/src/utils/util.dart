@@ -32,11 +32,21 @@ String moduleClassPage(String routeName) {
 }
 
 String moduleClass(String moduleName, String pages) {
-  final first = moduleName.substring(0, 1);
-  final name =  moduleName.replaceFirst(first, first.toUpperCase());
+  ///获取类名
+  final sb = StringBuffer();
+  if (moduleName.contains('_')) {
+    final list = moduleName.split('_');
+    for (final str in list) {
+      ///修改首字母为大写
+      final first = str.substring(0, 1);
+      final name = str.replaceFirst(first, first.toUpperCase());
+      sb.write(name);
+    }
+  }
+
   return '''
-  class $name{
-  $name._();
+  class ${sb.toString()}{
+  ${sb.toString()}._();
   
   $pages
   
