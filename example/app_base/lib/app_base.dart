@@ -24,3 +24,21 @@ class Splash extends StatelessWidget {
     return Container();
   }
 }
+
+
+@CRouter('app_base/user_login')
+class Login extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
+@CRouter('app_base/login_reset_pwd')
+class Reset extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}

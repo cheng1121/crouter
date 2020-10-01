@@ -28,29 +28,56 @@ String pageStr(String pageName, String className) {
 }
 
 String moduleClassPage(String routeName) {
-  return 'static const String ${routeName.split('/').last} = \'$routeName\';\n';
+  final page = routeName.split('/').last;
+  final name = toFirstUpper(page, true);
+  return 'static const String $name = \'$routeName\';\n';
+}
+
+///author: cheng
+///date: 2020/10/1
+///time: 10:53 AM
+///desc: 单词首字母大写(变量第一个单词首字母小写)
+String toFirstUpper(String text, bool isVar) {
+  String castUpper(String text) {
+    ///修改首字母为大写
+    final first = text.substring(0, 1);
+    final name = text.replaceFirst(first, first.toUpperCase());
+    return name;
+  }
+
+  String castLower(String text) {
+    final first = text.substring(0, 1);
+    final name = text.replaceFirst(first, first.toLowerCase());
+    return name;
+  }
+
+  final sb = StringBuffer();
+  if (text.contains('_')) {
+    final list = text.split('_');
+    for (final str in list) {
+      sb.write(castUpper(str));
+    }
+  } else {
+    sb.write(castUpper(text));
+  }
+
+  ///是变量
+  if (isVar) {
+    final name = castLower(sb.toString());
+    sb.clear();
+    sb.write(name);
+  }
+
+  return sb.toString();
 }
 
 String moduleClass(String moduleName, String pages) {
   ///获取类名
-  final sb = StringBuffer();
-  if (moduleName.contains('_')) {
-    final list = moduleName.split('_');
-    for (final str in list) {
-      ///修改首字母为大写
-      final first = str.substring(0, 1);
-      final name = str.replaceFirst(first, first.toUpperCase());
-      sb.write(name);
-    }
-  } else {
-    final first = moduleName.substring(0, 1);
-    final name = moduleName.replaceFirst(first, first.toUpperCase());
-    sb.write(name);
-  }
-  print('generate file =========${sb.toString()}');
+  final name = toFirstUpper(moduleName, false);
+  print('generate file =========$name');
   return '''
-  class ${sb.toString()}{
-  ${sb.toString()}._();
+  class $name{
+  $name._();
   
   $pages
   
